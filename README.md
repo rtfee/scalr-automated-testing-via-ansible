@@ -1,7 +1,5 @@
 # scalr-automated-testing-via-ansible
-## Setup instructions
-
-The instructions below are written for Ubuntu 16.04. Adapt as necessary for other distributions.
+## Scalr Setup instructions
 
 -Scalr Setup
 1. Log into Scalr and create a farm with one farm role
@@ -9,6 +7,8 @@ The instructions below are written for Ubuntu 16.04. Adapt as necessary for othe
 3. Save farm (do not click "save and launch", part of the test is automatically launching the farm)
 
 ## Setup on your testing server
+The instructions below are written for Ubuntu 16.04. Adapt as necessary for other distributions.
+
 This can be run from any server/workstation. Generally this is used in a scheduling tool like Jenkins or can be simple as using Cron. This playbook will take care of launching/terminating a farm and recording the result, it will be up to you to monitor those results and send to your monitoring tool.
 
 - Install the required packages:
