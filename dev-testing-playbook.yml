@@ -1,0 +1,34 @@
+- name: Scalr Automated Testing
+  connection: local
+  hosts: localhost
+  vars_files:
+   - vars.yml
+  tasks:
+# This Launches the Automated Testing farm
+   - name: Launch Farm
+     command: scalr-ctl --config testing_creds.yml farms launch --envId {{env}} --farmId {{farm}}
+     register: farmlaunch
+     ignore_errors: True
+# This polls for the farm to be successfully launched by looking for the state of running in the stdout.  This won't happen if the previous step doesn't complete successfully
+   - name: Get Server Launch Status
+     command: scalr-ctl --config testing_creds.yml farms list-servers --envId {{env}} --farmId {{farm}} --table --columns status
+     register: serverlaunch
+     when: farmlaunch|success
+     until: serverlaunch.stdout.find("running") != -1
+     retries: 15
+     delay: 60
+     ignore_errors: True
+# This terminates the farm based on a successful launch of the server.
+   - name: Terminate Farm
+     command: scalr-ctl --config testing_creds.yml farms terminate --envId {{env}} --farmId {{farm}}
+     register: farmterminate
+     ignore_errors: True
+# This polls for the termination of the server to make sure it actually stops and is no longer running
+   - name: Get Server Terminate Status
+     command: scalr-ctl --config testing_creds.yml farms list-servers --envId {{env}} --farmId {{farm}} --table --columns status
+     register: serverterminate
+     when: farmterminate|success
+     until: serverterminate.stdout.find("terminated") != -1
+     retries: 15
+     delay: 60
+     ignore_errors: True
