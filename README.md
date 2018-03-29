@@ -44,4 +44,4 @@ scalrfailure: '{"name": "scalr_operations", "output": "Unsuccesfully Launched Sc
 ansible-playbook test-playbook.yml
 ```
 
-If the above test is successful then you are ready to set this on a schedule.
+If the above test is successful then you are ready to set this on a schedule and have it report into your monitoring tool or email you based on success/failure.
