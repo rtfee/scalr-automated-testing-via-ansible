@@ -1,9 +1,9 @@
-API_HOST: enter_scalr_server_here
-API_KEY_ID: enter_api_key_id_here
+API_HOST: demo.scalr.club
+API_KEY_ID: APIKHX3JR3FVS8T2OON3
 API_SCHEME: https
 API_SECRET_KEY: enter_api_secret_key_here
 SSL_VERIFY_PEER: true
-accountId: 'enter account_id'
+accountId: '1'
 colored_output: true
-envId: 'enter_env_id'
+envId: '6'
 view: tree
