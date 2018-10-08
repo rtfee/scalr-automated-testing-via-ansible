@@ -6,6 +6,6 @@
   tasks:
 # This Launches the Automated Testing farm
    - name: Launch Farm
-     command: /usr/local/bin/scalr-ctl --config testing_creds.yml farms launch --envId {{env}} --farmId {{farm}}
+     command: /usr/local/bin/scalr-ctl --config testing_creds.yml farms list
      register: farmlaunch
      ignore_errors: True
