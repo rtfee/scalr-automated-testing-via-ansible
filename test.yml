@@ -9,6 +9,6 @@
    - name: Launch Farm
      command: scalr-ctl --config /tmp/testing_creds.yml farms list
      environment:
-      PATH: /usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:/opt/scalr-server/embedded/bin/
+      PATH: /usr/local/bin/scalr-ctl
      register: farmlaunch
      ignore_errors: True
