@@ -1,9 +1,7 @@
 - name: Scalr Automated Testing
   connection: local
   hosts: localhost
-  become: true
-  vars_files:
-   - vars.yml
+  sudo: true
   tasks:
 # This Launches the Automated Testing farm
    - name: Launch Farm
