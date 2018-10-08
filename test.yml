@@ -5,5 +5,4 @@
    - vars.yml
   tasks:
 # This Launches the Automated Testing farm
-   - name: Launch Farm
-     command: scalr-ctl
+   - shell: echo "hello world"
