@@ -1,5 +1,5 @@
 ---
-env: enter_env_id_here
-farm: enter_farm_id_here
+env: 6
+farm: 843
 scalrsuccess: '{"name": "scalr_operations", "output": "Succesfully Launched Scalr Farm", "status": 0}'
 scalrfailure: '{"name": "scalr_operations", "output": "Unsuccesfully Launched Scalr Farm", "status": 2}'
