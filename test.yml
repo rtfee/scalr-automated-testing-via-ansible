@@ -5,4 +5,7 @@
    - vars.yml
   tasks:
 # This Launches the Automated Testing farm
-   - shell: echo "hello world"
+   - name: Launch Farm
+     command: /usr/local/bin/scalr-ctl --config testing_creds.yml farms launch --envId {{env}} --farmId {{farm}}
+     register: farmlaunch
+     ignore_errors: True
