@@ -7,8 +7,6 @@
   tasks:
 # This Launches the Automated Testing farm
    - name: Launch Farm
-     command: scalr-ctl --config /tmp/testing_creds.yml farms list
-     environment:
-      PATH: /usr/local/bin/scalr-ctl
+     command: /usr/local/bin/scalr-ctl --config /tmp/testing_creds.yml farms list
      register: farmlaunch
      ignore_errors: True
